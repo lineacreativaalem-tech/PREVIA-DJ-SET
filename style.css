@@ -1,0 +1,234 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    width: 100%;
+    max-width: 500px; /* Ancho similar al de un móvil */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+
+.header {
+    background-color: #CC0000;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.header-icon {
+    font-size: 1.5em;
+}
+
+.status-message {
+    background-color: #28a745; /* Color verde para éxito */
+    color: white;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    text-align: center;
+    display: none; /* Se mostrará con JS */
+}
+
+/* Player Section */
+.player-section {
+    padding: 20px;
+    text-align: center;
+    background-color: #eee;
+    border-bottom: 1px solid #ddd;
+}
+
+.player-controls {
+    margin-bottom: 15px;
+}
+
+.play-button {
+    font-size: 5em;
+    color: #CC0000;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.play-button:hover {
+    transform: scale(1.05);
+}
+
+.selected-track-info {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#progress-bar {
+    flex-grow: 1;
+    -webkit-appearance: none;
+    height: 6px;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+#progress-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #CC0000;
+    border-radius: 50%;
+    cursor: grab;
+}
+
+.player-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap; /* Para pantallas más pequeñas */
+}
+
+.player-actions button {
+    background-color: #666;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.2s;
+}
+
+.player-actions button:hover {
+    background-color: #444;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#volume-slider {
+    width: 80px;
+    -webkit-appearance: none;
+    height: 6px;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+#volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #CC0000;
+    border-radius: 50%;
+    cursor: grab;
+}
+
+
+/* Track List */
+.list-title {
+    padding: 15px 20px 10px;
+    color: #333;
+    font-size: 1.2em;
+    border-bottom: 1px solid #eee;
+}
+
+.track-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.track-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.track-item:hover {
+    background-color: #f9f9f9;
+}
+
+.track-item.active {
+    background-color: #ffe0e0; /* Fondo para pista activa */
+    color: #CC0000;
+}
+
+.track-item-info {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.track-item-info .fas {
+    color: #666;
+}
+
+.track-item.active .track-item-info .fas {
+    color: #CC0000;
+}
+
+.download-button {
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.2s;
+}
+
+.download-button:hover {
+    color: #CC0000;
+}
+
+/* Gallery */
+.gallery-title {
+    padding: 20px 20px 10px;
+    color: #333;
+    font-size: 1.2em;
+    border-top: 1px solid #eee;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 0 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
